@@ -1,18 +1,42 @@
-/** @jsxImportSource @emotion/react */
-'use client' //testStyles、css、tw、jsxと一緒に使うとき
-import tw from 'twin.macro'
+import Button from '@/components/shared/Button'
+import Input from '@/components/shared/Input'
+import Select, { Option } from '@/components/shared/Select'
+import Skeleton from '@/components/shared/Skeleton'
+import Spacing from '@/components/shared/Spacing'
+import Text from '@/components/shared/Text'
+import TextField from '@/components/shared/TextField'
 
 export default function Home() {
+  const arr = [
+    { label: 'dadsa', value: 'df' },
+    { label: 'da', value: 'df' },
+  ] as Option[]
   return (
-    <main>
-      <Test>test</Test>
-      <h1 css={[testStyles, tw`font-bold text-yellow-100`]}>test1</h1>
-      <div tw="text-3xl">test2</div>
-      <div css={tw`text-2xl`}>test3</div>
+    <div>
       <div className="text-xl text-red-300">test4</div>
-    </main>
+      <Text typography="t3" display="block" textAlign="center">
+        ddf
+      </Text>
+
+      <Button color="success" full size="small">
+        button
+      </Button>
+      <Input aria-invalid />
+
+      {/* <Button.Group title="button group">
+        <Button>안녕하세요</Button>
+        <Button>안녕</Button>
+      </Button.Group> */}
+      <Skeleton width={100} height={30} />
+      <Spacing size={30} direction="horizontal" backgroundColor="blue980" />
+      <TextField label={<p>dasfas</p>} helpMessage="dd" />
+      {/* <ListRow
+        withArrow
+        left={'dfsa'}
+        contents={<ListRow.Texts title={'lorem'} subTitle={'hi'} />}
+        right={<div>dsf</div>}
+      /> */}
+      <Select label="test" options={arr} placeholder="test" />
+    </div>
   )
 }
-
-const Test = tw.div`bg-blue-400 text-4xl`
-const testStyles = tw`text-5xl font-bold bg-green-200`
