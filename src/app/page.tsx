@@ -6,6 +6,7 @@ import Spacing from '@/components/shared/Spacing'
 import TextField from '@/components/shared/TextField'
 
 export default function Home() {
+  // コメント
   const arr = [
     { label: 'dadsa', value: 'df' },
     { label: 'da', value: 'df' },
@@ -13,7 +14,6 @@ export default function Home() {
   return (
     <div>
       <div className="text-xl text-red-300">test4</div>
-
       <Button color="success" full size="small">
         button
       </Button>
