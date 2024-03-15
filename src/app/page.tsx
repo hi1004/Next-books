@@ -3,7 +3,6 @@ import Input from '@/components/shared/Input'
 import Select, { Option } from '@/components/shared/Select'
 import Skeleton from '@/components/shared/Skeleton'
 import Spacing from '@/components/shared/Spacing'
-import Text from '@/components/shared/Text'
 import TextField from '@/components/shared/TextField'
 
 export default function Home() {
@@ -15,10 +14,6 @@ export default function Home() {
   return (
     <div>
       <div className="text-xl text-red-300">test4</div>
-      <Text typography="t3" display="block" textAlign="center">
-        ddf
-      </Text>
-
       <Button color="success" full size="small">
         button
       </Button>
