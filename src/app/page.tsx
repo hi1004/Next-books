@@ -20,10 +20,10 @@ export default function HomePage() {
   )
 }
 
-async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/books`)
-  if (!res.ok) {
-    throw new Error('error')
-  }
-  return res.json()
-}
+// async function getData() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/books`)
+//   if (!res.ok) {
+//     throw new Error('error')
+//   }
+//   return res.json()
+// }

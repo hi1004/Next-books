@@ -73,6 +73,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                 <Text typography="t7" color="gray" display="inline-block">
                   {book.author}
                 </Text>
+                <div>{book.reviewAverage}</div>
 
                 <Text typography="t1" color="red">
                   {book.itemPrice.toLocaleString()}円
