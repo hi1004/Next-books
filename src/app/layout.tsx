@@ -1,5 +1,5 @@
+import { NextLayout, NextProvider } from '@/app/providers'
 import '@/styles/globals.css'
-import GlobalStyles from '@/styles/GlobalStyles'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -19,9 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>
-        <GlobalStyles />
-        <main>{children}</main>
+      <body suppressHydrationWarning className="bg-slate-100">
+        <NextProvider>
+          <NextLayout>{children}</NextLayout>
+        </NextProvider>
       </body>
     </html>
   )

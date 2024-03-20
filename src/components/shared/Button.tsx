@@ -19,6 +19,7 @@ interface ButtonProps {
   outline?: boolean
   full?: boolean
   disabled?: boolean
+  circle?: boolean
 }
 
 const BaseButton = styled.button(
@@ -28,12 +29,14 @@ const BaseButton = styled.button(
     outline,
     full,
     disabled,
+    circle,
   }: ButtonProps) => [
-    tw`font-bold cursor-pointer outline-none rounded-[6px] hocus:opacity-80 transition duration-75`,
+    tw`font-bold cursor-pointer flex items-center justify-center outline-none rounded-[6px] hocus:opacity-80 transition duration-75`,
     buttonSizeMap[size],
     full && tw`block w-full rounded-none`,
     disabled && tw`opacity-[0.26]  cursor-not-allowed hover:opacity-[0.26]`,
     outline ? buttonOutlineColorMap[color] : buttonColorMap[color],
+    circle && tw`rounded-full w-30pxr h-30pxr p-0`,
   ],
 )
 
