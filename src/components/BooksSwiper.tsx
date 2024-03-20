@@ -49,7 +49,10 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                   className="w-auto h-[200px] hover:scale-110"
                   alt={book.itemCaption}
                 />
-                <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
+                <div
+                  className="absolute bottom-1 left-1/2 -translate-x-1/2"
+                  onClick={(e) => e.preventDefault()}
+                >
                   <Button.Group>
                     <Button outline circle>
                       <IoMdAdd className="text-20pxr" />

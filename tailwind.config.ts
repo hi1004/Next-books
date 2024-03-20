@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 type Spacing = Record<string, string>
 type FontSize = Record<string, string>
@@ -34,6 +35,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('hocus', ['&:hover', '&:focus'])
+    }),
+  ],
 }
 export default config
