@@ -1,8 +1,18 @@
+'use client'
 import BookList from '@/components/BookList'
 import Text from '@/components/shared/Text'
+import axios from 'axios'
+import { useQuery } from 'react-query'
 
-export default async function HomePage() {
-  const { category } = await getData()
+export default function HomePage() {
+  const fetchCategories = async () => {
+    const { data } = await axios(`/api/books`)
+    return data.category
+  }
+  const { data: category, isLoading } = useQuery('category', fetchCategories)
+  if (isLoading && !category) {
+    return <div>loading...</div>
+  }
 
   return (
     <>
@@ -10,12 +20,4 @@ export default async function HomePage() {
       <BookList category={category} />
     </>
   )
-}
-
-export async function getData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/books`)
-  if (!res.ok) {
-    throw new Error('error')
-  }
-  return res.json()
 }
