@@ -19,7 +19,7 @@ export const buttonColorMap = {
 
 export const buttonOutlineColorMap = {
   primary: css`
-    background-color: ${colors.white};
+    background-color: inherit;
     color: ${colors.blue};
     border: 1px solid ${colors.blue};
   `,
@@ -39,6 +39,7 @@ export const buttonSizeMap = {
   small: tw`text-13pxr px-9pxr py-8pxr`,
   medium: tw`text-15pxr px-15pxr py-10pxr`,
   large: tw`text-18pxr px-10pxr py-12pxr`,
+  circle: tw`p-10pxr`,
 }
 
 export type ButtonColors = keyof typeof buttonColorMap

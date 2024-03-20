@@ -3556,7 +3556,9 @@ __metadata:
     prisma: "npm:^5.11.0"
     react: "npm:^18"
     react-dom: "npm:^18"
+    react-icons: "npm:^5.0.1"
     react-query: "npm:^3.39.3"
+    swiper: "npm:^11.0.7"
     tailwindcss: "npm:^3.3.0"
     ts-node: "npm:^10.9.2"
     twin.macro: "npm:^3.4.1"
@@ -4114,6 +4116,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "react-icons@npm:5.0.1"
+  peerDependencies:
+    react: "*"
+  checksum: 10c0/717022d93a3b2b30082f86fbb3c725a94a603b3fa1c611533439cc886f691a13b1833c30446d257a177667779239eac57411fa7516d8a4787bd735e965c9f63d
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -4666,6 +4677,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 10c0/6c4032340701a9950865f7ae8ef38578d8d7053f5e10518076e6554a9381fa91bd9c6850193695c141f32b21f979c985db07265a758867bac95de05f7d8aeb39
+  languageName: node
+  linkType: hard
+
+"swiper@npm:^11.0.7":
+  version: 11.0.7
+  resolution: "swiper@npm:11.0.7"
+  checksum: 10c0/d27b8c3b5deccde730317c2fe868350fad039e9776c8c6dfd11a89d9e732a66c1292292ca635141a7e0bbb363fcac1291c9fd716bf7a8e3b85d320e58ff94eba
   languageName: node
   linkType: hard
 

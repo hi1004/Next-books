@@ -2,6 +2,7 @@
 import GlobalStyles from '@/styles/GlobalStyles'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import tw from 'twin.macro'
 
 const queryClient = new QueryClient()
 export function NextProvider({ children }: { children: React.ReactNode }) {
@@ -16,10 +17,11 @@ export const NextLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <header></header>
-      <main>
+      <main className="">
         <GlobalStyles />
-        {children}
+        <Container>{children}</Container>
       </main>
     </>
   )
 }
+const Container = tw.div`px-14pxr container h-full mx-auto max-w-5xl bg-gray-50`

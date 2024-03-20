@@ -1,21 +1,22 @@
-import BookList from '@/app/BookList'
-import Text from '@/components/shared/Text'
+'use client'
+import BookList from '@/components/BookList'
+import axios from 'axios'
+import { useQuery } from 'react-query'
 
-export default async function Home() {
-  const { category } = await getData()
+export default function HomePage() {
+  const fetchCategories = async () => {
+    const { data } = await axios(`/api/books`)
+    return data.category
+  }
+  const { data: category, isLoading } = useQuery('category', fetchCategories)
+  if (isLoading && !category) {
+    return <div>loading...</div>
+  }
+
   return (
-    <div>
-      <div className="text-xl text-red-300">test4</div>
-      <div className="text-2xl text-teal-200">test</div>
-
-      <Text
-        typography="t2"
-        display="block"
-        textAlign="center"
-        fontWeight="bolder"
-      ></Text>
+    <>
       <BookList category={category} />
-    </div>
+    </>
   )
 }
 
