@@ -24,6 +24,21 @@ export interface BookType {
   category?: string | null
 }
 
+export interface RankingBookType {
+  genreId: string
+  itemCaption: string
+  itemCode: string
+  itemName: string
+  itemPrice: string
+  itemUrl: string
+  mediumImageUrls: string[]
+  rank: number
+  reviewAverage: string
+  reviewCount: number
+  shopCode: string
+  smallImageUrls: string[]
+}
+
 export interface CategoryType {
   mindBooks: BookType[]
   marketingBooks: BookType[]

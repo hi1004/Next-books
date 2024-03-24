@@ -14,6 +14,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
     <>
       <Swiper
         spaceBetween={20}
+        slidesPerView={2}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -36,7 +37,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
             <Link href={`/books/${book.category}/${book.id}`}>
               <Flex
                 direction="column"
-                className="w-full h-full shadow-md py-10 relative rounded-2xl overflow-hidden bg-blue-300/15 "
+                className="w-full   shadow-md py-10 relative rounded-2xl overflow-hidden bg-blue-300/15 "
                 justify="center"
                 align="center"
               >
@@ -46,11 +47,11 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                   height={0}
                   priority
                   sizes="100vw"
-                  className="w-auto h-[200px] hover:scale-110"
+                  className="w-auto h-[145px] sm:h-[200px] hover:scale-110"
                   alt={book.itemCaption}
                 />
                 <div
-                  className="absolute bottom-1 left-1/2 -translate-x-1/2"
+                  className="absolute hidden sm:block bottom-1 left-1/2 -translate-x-1/2"
                   onClick={(e) => e.preventDefault()}
                 >
                   <Button.Group>

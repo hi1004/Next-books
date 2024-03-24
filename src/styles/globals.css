@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-slide {
+  /* width: 100% !important; */
+}
 .swiper-slide:hover .hover\:underline {
   text-decoration: underline;
 }
@@ -18,10 +21,10 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-  top: 0 !important;
+  top: 25% !important;
   width: 40px !important;
   padding: 0 10px;
-  height: 100% !important;
+  height: 110px !important;
   color: var(--gray400) !important;
 }
 .swiper-button-prev:hover,

@@ -1,6 +1,8 @@
 import { NextLayout, NextProvider } from '@/app/providers'
 import '@/styles/globals.css'
 import { Metadata } from 'next'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 export const metadata: Metadata = {
   title: 'Next Books',

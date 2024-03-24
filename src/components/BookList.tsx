@@ -4,12 +4,11 @@ import Text from '@/components/shared/Text'
 import { CATEGORY_ARR, SELECT_LABEL } from '@/constants/category'
 import { BookType } from '@/interface'
 
+import { Fragment, useState } from 'react'
+
 import BooksSwiper from '@/components/BooksSwiper'
 import Select from '@/components/shared/Select'
 import { replaceCategoryName } from '@/lib/replaceCategoryName'
-import { Fragment, useState } from 'react'
-import 'swiper/css'
-import 'swiper/css/navigation'
 import tw from 'twin.macro'
 
 type CategoryType = {
