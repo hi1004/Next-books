@@ -38,3 +38,28 @@
   background-color: var(--gray100) !important;
   color: var(--gray600) !important;
 }
+body {
+  font-family: -apple-system, NotoSansJP, sans-serif;
+}
+
+@font-face {
+  font-family: 'NotoSansJP';
+  font-weight: 400;
+  src: url('/fonts/NotoSansJP.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NotoSansJP';
+  font-weight: 600;
+  src: url('/fonts/NotoSansJP.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NotoSansJP';
+  font-weight: 700;
+  src: url('/fonts/NotoSansJP.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NotoSansJP';
+  font-weight: 900;
+  src: url('/fonts/NotoSansJP.ttf') format('truetype');
+}
