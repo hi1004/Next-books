@@ -15,7 +15,7 @@ type CategoryType = {
   [key: string]: BookType[]
 }
 
-const BookList = ({ category }: { category: CategoryType }) => {
+const RecommendBookList = ({ category }: { category: CategoryType }) => {
   const [selectedCategory, setSelectedCategory] = useState(CATEGORY_ARR[0])
 
   return (
@@ -35,7 +35,7 @@ const BookList = ({ category }: { category: CategoryType }) => {
           <Fragment key={categoryName}>
             <Text
               typography="t5"
-              className={`hidden 2xl:inline-block md:mr-4 lg:mr-10 last-of-type:mr-0 relative top-10 cursor-pointer hover:border-b-2 hover:text-red-500 border-b-red-400  ${selectedCategory === categoryName && 'border-b-2'}`}
+              className={`hidden 2xl:inline-block md:mr-4 lg:mr-10 last-of-type:mr-0 relative top-10 cursor-pointer hover:border-b-2 hover:text-primary border-b-primary  ${selectedCategory === categoryName && 'border-b-2'}`}
               color={selectedCategory === categoryName ? 'red' : 'gray700'}
               onClick={() => setSelectedCategory(categoryName)}
             >
@@ -54,6 +54,6 @@ const BookList = ({ category }: { category: CategoryType }) => {
   )
 }
 
-export default BookList
+export default RecommendBookList
 const SwiperContainer = tw.div`relative px-6 h-[530px] md:flex 2xl:block`
 const SwiperListContainer = tw.div`absolute bottom-10 px-6 left-0 w-full h-[400px]`

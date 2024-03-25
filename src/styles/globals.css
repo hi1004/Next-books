@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.swiper-slide {
-  /* width: 100% !important; */
+#IT_RANKING .swiper-button-prev,
+#IT_RANKING .swiper-button-next {
+  top: 0 !important;
+  height: 100% !important;
+}
+
+#IT_RANKING .swiper-slide {
+  display: flex !important;
 }
 .swiper-slide:hover .hover\:underline {
   text-decoration: underline;

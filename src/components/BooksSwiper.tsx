@@ -37,7 +37,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
             <Link href={`/books/${book.category}/${book.id}`}>
               <Flex
                 direction="column"
-                className="w-full   shadow-md py-10 relative rounded-2xl overflow-hidden bg-blue-300/15 "
+                className="w-full shadow-md py-10 relative rounded-2xl overflow-hidden bg-blue-300/15 "
                 justify="center"
                 align="center"
               >
