@@ -1,19 +1,28 @@
 'use client'
+import { AiOutlineRight } from 'react-icons/ai'
 
+import Flex from '@/components/shared/Flex'
+import Spacing from '@/components/shared/Spacing'
 import Text from '@/components/shared/Text'
 import { RankingBookType } from '@/interface'
+import { colors } from '@/styles/colorPalette'
 import Image from 'next/image'
 import Link from 'next/link'
 import { EffectCoverflow, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import tw from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
   return (
     <section className="w-full pt-10pxr pb-30pxr bg-primary/10 ">
-      <Text typography="t2" bold>
-        IT資格 Top10 &gt;
-      </Text>
+      <Flex align="center" className="px-24pxr">
+        <Text typography="t2" bold>
+          IT資格Top30
+        </Text>
+        <Spacing direction="horizontal" size={10} />
+        <AiOutlineRight className="text-25pxr" />
+      </Flex>
+
       <Swiper
         id="IT_RANKING"
         effect={'coverflow'}
@@ -45,8 +54,9 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
       >
         {books.map((book) => (
           <SwiperSlide key={book.rank} className="flex justify-center">
-            <RankingNumber>{book.rank}</RankingNumber>
-            <Link href={book.itemUrl} className="cursor-pointer">
+            <Link href={book.itemUrl} className="cursor-pointer relative">
+              <RankingNumber className="rank_number">{book.rank}</RankingNumber>
+
               <Image
                 src={book.mediumImageUrls[0].replace('ex=', '350x350')}
                 width={0}
@@ -65,4 +75,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
 }
 
 export default ITrankingList
-const RankingNumber = tw.div`text-transparent absolute text-100pxr [text-shadow: red] [-webkit-text-stroke: 1px red] left-0 bottom-0`
+const RankingNumber = styled.div`
+  ${tw`text-transparent absolute text-[20vw] sm:text-[10vw] 2xl:text-[8vw] left-0 -bottom-[2vw] font-black tracking-tighter`}
+  -webkit-text-stroke: 3px ${colors.red}
+`

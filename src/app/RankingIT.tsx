@@ -1,4 +1,4 @@
-import ITrankingList from '@/components/ITrankingList'
+import ITrankingList from '@/components/books/ranking/ITrankingList'
 import { IT_RANKING_URL } from '@/constants/api'
 
 const RankingIT = async () => {

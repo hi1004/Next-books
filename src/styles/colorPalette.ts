@@ -21,7 +21,7 @@ export const colorPalette = css`
     --blue500: rgba(54, 143, 255, 0.5);
     --blue980: rgba(54, 143, 255, 0.98);
     --red: #d7003a;
-    --red100: rgba(253, 46, 105, 0.1);
+    --red100: rgb(215 0 58 / 66%);
     --red50: rgba(253, 46, 105, 0.05);
     --purple: rgba(151, 95, 254, 1);
     --purple100: rgba(151, 95, 254, 0.1);

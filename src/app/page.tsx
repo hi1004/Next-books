@@ -1,10 +1,12 @@
-import RankingIT from '@/components/RankingIT'
-import RecommendBookList from '@/components/RecommendBookList'
+import RankingAll from '@/app/RankingAll'
+import RankingIT from '@/app/RankingIT'
+import RecommendBookList from '@/components/books/recommend/RecommendBookList'
 export default async function HomePage() {
   const { category } = await getCategoryData()
 
   return (
     <>
+      <RankingAll />
       <RankingIT />
       <RecommendBookList category={category} />
     </>

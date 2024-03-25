@@ -10,6 +10,13 @@
 
 #IT_RANKING .swiper-slide {
   display: flex !important;
+  opacity: 0.5;
+}
+#IT_RANKING .swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+#IT_RANKING .swiper-slide.swiper-slide-active .rank_number {
+  text-shadow: 0 0 var(--red100);
 }
 .swiper-slide:hover .hover\:underline {
   text-decoration: underline;

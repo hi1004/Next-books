@@ -6,7 +6,7 @@ import { BookType } from '@/interface'
 
 import { Fragment, useState } from 'react'
 
-import BooksSwiper from '@/components/BooksSwiper'
+import BooksSwiper from '@/components/books/recommend/BooksSwiper'
 import Select from '@/components/shared/Select'
 import { replaceCategoryName } from '@/lib/replaceCategoryName'
 import tw from 'twin.macro'
@@ -19,8 +19,8 @@ const RecommendBookList = ({ category }: { category: CategoryType }) => {
   const [selectedCategory, setSelectedCategory] = useState(CATEGORY_ARR[0])
 
   return (
-    <section>
-      <Text as="h1" typography="t1" bold>
+    <section className="mt-40pxr">
+      <Text as="h2" typography="t2" bold className="px-24pxr">
         おすすめ
       </Text>
       <SwiperContainer>
