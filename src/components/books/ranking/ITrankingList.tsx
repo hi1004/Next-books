@@ -52,7 +52,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
         centeredSlides
         modules={[Navigation, EffectCoverflow]}
       >
-        {books.map((book) => (
+        {books?.map((book) => (
           <SwiperSlide key={book.rank} className="flex justify-center">
             <Link href={book.itemUrl} className="cursor-pointer relative">
               <RankingNumber className="rank_number">{book.rank}</RankingNumber>

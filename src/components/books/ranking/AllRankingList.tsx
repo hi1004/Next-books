@@ -10,7 +10,7 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
   return (
     <section className="py-10 px-24pxr">
       <Swiper>
-        {books.map((book) => (
+        {books?.map((book) => (
           <SwiperSlide key={book.rank}>
             <div className="grid grid-cols-1 md:grid-cols-2">
               <Flex direction="column" className="justify-end">
