@@ -2,8 +2,8 @@ import ITrankingList from '@/components/books/ranking/ITrankingList'
 import { IT_RANKING_URL } from '@/constants/api'
 
 const RankingIT = async () => {
-  const { Items } = await getRankingData(IT_RANKING_URL)
-  return <ITrankingList books={Items} />
+  const data = await getRankingData(IT_RANKING_URL)
+  return <ITrankingList books={data} />
 }
 
 export default RankingIT
@@ -16,7 +16,8 @@ async function getRankingData(URL: string) {
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
-    return res.json()
+    const data = await res.json()
+    return data.Items
   } catch (e) {
     console.log(e)
   }
