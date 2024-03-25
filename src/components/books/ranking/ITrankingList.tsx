@@ -63,7 +63,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
                 height={0}
                 priority
                 sizes="100vw"
-                className="w-auto xl:w-[300px] 2xl:w-[350px] h-[300px] xl:h-auto object-cover"
+                className="w-auto xl:w-[300px] 2xl:w-[350px] h-[250px] xl:h-auto object-cover"
                 alt={book.itemCaption}
               />
             </Link>
