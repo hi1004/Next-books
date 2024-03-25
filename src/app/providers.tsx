@@ -1,4 +1,5 @@
 'use client'
+import Header from '@/components/Header'
 import GlobalStyles from '@/styles/GlobalStyles'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -16,8 +17,8 @@ export function NextProvider({ children }: { children: React.ReactNode }) {
 export const NextLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <header></header>
-      <main className="">
+      <Header />
+      <main>
         <GlobalStyles />
         <Container>{children}</Container>
       </main>

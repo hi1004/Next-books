@@ -2,6 +2,7 @@ import Button from '@/components/shared/Button'
 import Flex from '@/components/shared/Flex'
 import Text from '@/components/shared/Text'
 import { BookType } from '@/interface'
+import { truncateText } from '@/lib/truncatedText'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaShoppingCart } from 'react-icons/fa'
@@ -29,7 +30,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
         navigation
         modules={[Navigation]}
       >
-        {books.map((book) => (
+        {books?.map((book) => (
           <SwiperSlide
             key={book.id}
             className="cursor-pointer hover:drop-shadow-lg"
@@ -71,7 +72,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                   display="inline-block"
                   className="hover:underline"
                 >
-                  {book.title}
+                  {truncateText(book.title, 29)}
                 </Text>
 
                 <Text typography="t7" color="gray" display="inline-block">
