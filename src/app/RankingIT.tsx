@@ -10,7 +10,7 @@ export default RankingIT
 async function getRankingData(URL: string) {
   try {
     const res = await fetch(URL, {
-      next: { revalidate: 60 },
+      cache: 'no-store',
     })
 
     if (!res.ok) {

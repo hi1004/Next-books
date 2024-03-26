@@ -1,16 +1,21 @@
 import AllRankingList from '@/components/books/ranking/AllRankingList'
 import { BISUNISS_RANKING_URL } from '@/constants/api'
+import { Suspense } from 'react'
 
 const RankingAll = async () => {
   const data = await getRankingData(BISUNISS_RANKING_URL)
-  return <AllRankingList books={data} />
+  return (
+    <Suspense fallback={<div>loading...</div>}>
+      <AllRankingList books={data} />
+    </Suspense>
+  )
 }
 
 export default RankingAll
 async function getRankingData(URL: string) {
   try {
     const res = await fetch(URL, {
-      next: { revalidate: 60 },
+      cache: 'no-store',
     })
 
     if (!res.ok) {

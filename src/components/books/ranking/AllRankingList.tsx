@@ -61,7 +61,6 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                   src={book.mediumImageUrls[0].replace('ex=', '')}
                   width={0}
                   height={0}
-                  priority
                   sizes="100vw"
                   alt={book.itemCaption}
                   className="w-auto h-[400px] md:h-[500px] xl:h-[700px] object-cover"
