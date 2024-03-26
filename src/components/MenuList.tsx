@@ -1,7 +1,7 @@
 import Flex from '@/components/shared/Flex'
 import Link from 'next/link'
 
-const MENU_ARR = ['ホーム', 'ストア', 'マイリスト']
+const MENU_ARR = ['ホーム', 'マイリスト']
 
 const MenuList = () => {
   return (

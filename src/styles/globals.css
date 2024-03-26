@@ -2,15 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--red100) !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+}
 #IT_RANKING .swiper-button-prev,
 #IT_RANKING .swiper-button-next {
   top: 0 !important;
   height: 100% !important;
 }
+#IT_RANKING .swiper-button-prev:hover,
+#IT_RANKING .swiper-button-next:hover {
+  background-color: var(--red50) !important;
+}
 
 #IT_RANKING .swiper-slide {
-  display: flex !important;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 #IT_RANKING .swiper-slide.swiper-slide-active {
   opacity: 1;
@@ -18,6 +29,12 @@
 #IT_RANKING .swiper-slide.swiper-slide-active .rank_number {
   text-shadow: 0 0 var(--red100);
 }
+#ALL_RANKING .swiper-button-prev,
+#ALL_RANKING .swiper-button-next {
+  top: 30% !important;
+  height: 50% !important;
+}
+
 .swiper-slide:hover .hover\:underline {
   text-decoration: underline;
 }
@@ -38,12 +55,19 @@
   width: 40px !important;
   padding: 0 10px;
   height: 110px !important;
-  color: var(--gray400) !important;
+  color: var(--red100) !important;
 }
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background-color: var(--gray100) !important;
-  color: var(--gray600) !important;
+  background-color: var(--red50) !important;
+  color: var(--red) !important;
+}
+.swiper .swiper-pagination {
+  position: absolute;
+  bottom: 10px !important;
+}
+.swiper .swiper-pagination-bullet {
+  background-color: var(--red);
 }
 body {
   font-family: -apple-system, NotoSansJP, sans-serif;

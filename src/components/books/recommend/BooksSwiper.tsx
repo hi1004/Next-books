@@ -38,7 +38,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
             <Link href={`/books/${book.category}/${book.id}`}>
               <Flex
                 direction="column"
-                className="w-full shadow-md py-10 relative rounded-2xl overflow-hidden bg-blue-300/15 "
+                className="w-full shadow-md py-10 relative rounded-2xl overflow-hidden bg-primary/5 "
                 justify="center"
                 align="center"
               >
@@ -56,10 +56,10 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                   onClick={(e) => e.preventDefault()}
                 >
                   <Button.Group>
-                    <Button outline circle>
+                    <Button color="primary" outline circle>
                       <IoMdAdd className="text-20pxr" />
                     </Button>
-                    <Button circle>
+                    <Button color="primary" circle>
                       <FaShoppingCart />
                     </Button>
                   </Button.Group>

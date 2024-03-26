@@ -10,14 +10,15 @@ export default RankingIT
 async function getRankingData(URL: string) {
   try {
     const res = await fetch(URL, {
-      cache: 'no-store',
+      next: { revalidate: 60 },
     })
 
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
     const data = await res.json()
-    return data.Items
+    const itRankingData = data.Items.slice(0, 20)
+    return itRankingData
   } catch (e) {
     console.log(e)
   }
