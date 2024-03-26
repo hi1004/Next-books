@@ -13,7 +13,7 @@ const Header = () => {
             className="flex w-[100px] items-center h-full pl-4 text-primary bg-white"
           >
             <Text typography="t6" color="red" bold>
-              BOOK's PROJECT
+              BOOK&apos;s PROJECT
             </Text>
           </Link>
           <MenuList />
