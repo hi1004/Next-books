@@ -11,7 +11,7 @@ import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
   return (
-    <section className="py-10 px-24pxr">
+    <section className="py-10 sm:px-24pxr">
       <Swiper
         effect="fade"
         id="ALL_RANKING"
@@ -34,7 +34,7 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
               <div className="hidden flex-col lg:w-[450px] ml-14 lg:flex justify-end mb-10">
                 <Flex align="center">
                   <Text typography="t7" color="gray600" bold className="mr-4">
-                    ビズニスマナー ランキング
+                    ビズニスマナー
                   </Text>
                   <Text typography="t3" display="inline" color="red">
                     {book.rank}位
@@ -44,15 +44,25 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                   {book.itemName}
                 </Text>
                 <div className="mt-1 my-6">{book.reviewAverage}</div>
+
                 <Button
                   size="medium"
                   color="error"
-                  className="sm:max-w-[120px]"
+                  className="sm:max-w-[140px]"
                 >
                   詳細を見る
                 </Button>
               </div>
-              <div className="sm:h-[400px] sm:flex-row flex py-7 px-12 gap-10 justify-center sm:justify-normal lg:justify-center items-center bg-primary/5 ">
+              <div className="sm:h-[400px] sm:flex-row flex pb-10 sm:pb-7 pt-10 sm:px-12 gap-4 sm:gap-10 justify-center sm:justify-normal lg:justify-center items-center bg-primary/5 ">
+                <div className="flex sm:hidden my-10pxr absolute top-0 left-6 items-center">
+                  <Text typography="t6" bold>
+                    ビズニスマナー
+                  </Text>
+
+                  <Text typography="t4" display="inline" color="red">
+                    {book.rank}位
+                  </Text>
+                </div>
                 <Image
                   src={book.mediumImageUrls[0].replace('ex=', '128x128x')}
                   width={0}
@@ -61,15 +71,15 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                   alt={book.itemCaption}
                   className="w-auto h-[128px] sm:h-[300px] object-cover"
                 />
-                <div className="flex-col lg:hidden justify-end sm:h-[300px] sm:w-full relative">
-                  <Flex align="center">
-                    <Text typography="t7" color="gray600" bold className="mr-4">
-                      総合ランキング
+                <div className="flex-col flex h-[145px] w-[180px] lg:hidden justify-end sm:h-[300px] sm:w-full relative">
+                  <div className="hidden sm:flex items-center">
+                    <Text typography="t6" color="gray600" bold className="mr-4">
+                      ビズニスマナー
                     </Text>
                     <Text typography="t4" display="inline" color="red">
                       {book.rank}位
                     </Text>
-                  </Flex>
+                  </div>
                   <Text
                     typography="t4"
                     as="h1"
@@ -78,14 +88,23 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                   >
                     {truncateText(book.itemName, 40)}
                   </Text>
-
-                  <div className="sm:mt-1 sm:mb-6 mb-3">
-                    {book.reviewAverage}
+                  <div>
+                    <Text
+                      typography="t7"
+                      as="h1"
+                      bold
+                      className="text-balance sm:hidden"
+                    >
+                      {truncateText(book.itemName, 40)}
+                    </Text>
+                    <div className="sm:mt-1 sm:mb-6 mb-3">
+                      {book.reviewAverage}
+                    </div>
                   </div>
                   <Button
                     size="small"
                     color="error"
-                    className="sm:max-w-[120px] sm:absolute bottom-0 right-0"
+                    className="sm:max-w-[140px] max-w-[100px] sm:absolute bottom-0 right-0"
                   >
                     詳細を見る
                   </Button>

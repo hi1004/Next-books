@@ -1,4 +1,4 @@
-import AllRankingList from '@/components/books/ranking/AllRankingList'
+import AllRankingList from '@/components/books/ranking/BusinessRankingList'
 import { BISUNISS_RANKING_URL } from '@/constants/api'
 import { Suspense } from 'react'
 

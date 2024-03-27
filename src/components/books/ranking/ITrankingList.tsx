@@ -7,17 +7,33 @@ import Text from '@/components/shared/Text'
 import { RankingBookType } from '@/interface'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
-import { EffectCoverflow, Navigation } from 'swiper/modules'
+import { useEffect, useState } from 'react'
+import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import tw, { styled } from 'twin.macro'
 const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0)
+  const [isMobile, setIsMobile] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 450)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
     <section className="w-full pt-10pxr pb-30pxr bg-primary/5 ">
-      <Flex align="center" className="px-24pxr pt-20pxr pb-5pxr">
-        <Text typography="t3" as="h3" bold>
-          IT資格Top30
+      <Flex align="center" className="px-24pxr py-20pxr">
+        <Text typography="t3" as="h3" bold className="hidden sm:block">
+          おすすめのIT資格
+        </Text>
+        <Text typography="t6" as="h6" bold className="sm:hidden">
+          おすすめのIT資格
         </Text>
         <Spacing direction="horizontal" size={10} />
         <AiOutlineRight className="text-25pxr" />
@@ -25,33 +41,32 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
 
       <Swiper
         id="IT_RANKING"
-        effect={'coverflow'}
-        coverflowEffect={{
-          rotate: 10,
-          stretch: 0,
-          depth: 150,
-          modifier: 1,
-          slideShadows: false,
-        }}
         slideToClickedSlide
         slidesPerView={3}
         breakpoints={{
           1535: {
             slidesPerView: 8,
+            centeredSlides: true,
+            loop: true,
           },
           1023: {
             slidesPerView: 6,
+            centeredSlides: true,
+            loop: true,
           },
 
           765: {
-            slidesPerView: 5,
+            slidesPerView: 4,
+            centeredSlides: true,
+            loop: true,
+          },
+          450: {
+            loop: false,
           },
         }}
-        loop
-        navigation
-        centeredSlides
+        navigation={!isMobile}
         loopAdditionalSlides={10}
-        modules={[Navigation, EffectCoverflow]}
+        modules={[Navigation]}
       >
         {books?.map((book, index) => (
           <SwiperSlide
@@ -70,10 +85,10 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
               }}
               className="cursor-pointer relative"
             >
-              <Flex className="gap-1">
-                <RankingNumber className="rank_number">
+              <Flex justify="center">
+                {/* <RankingNumber className="rank_number">
                   {book.rank}
-                </RankingNumber>
+                </RankingNumber> */}
                 <Image
                   src={book.mediumImageUrls[0]}
                   width={0}

@@ -34,7 +34,9 @@
   top: 30% !important;
   height: 50% !important;
 }
-
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
 .swiper-slide:hover .hover\:underline {
   text-decoration: underline;
 }

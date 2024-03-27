@@ -19,10 +19,7 @@ const RecommendBookList = ({ category }: { category: CategoryType }) => {
   const [selectedCategory, setSelectedCategory] = useState(CATEGORY_ARR[0])
 
   return (
-    <section className="mt-40pxr">
-      <Text as="h3" typography="t3" bold className="px-24pxr">
-        おすすめ
-      </Text>
+    <section className="mt-10pxr">
       <SwiperContainer>
         <Select
           options={SELECT_LABEL}
