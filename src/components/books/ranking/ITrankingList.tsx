@@ -56,7 +56,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
             centeredSlides: false,
           },
         }}
-        touchRatio={30}
+        touchRatio={4}
         navigation={!isMobile}
         loopAdditionalSlides={10}
         modules={[Navigation]}
