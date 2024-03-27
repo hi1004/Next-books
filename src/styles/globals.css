@@ -22,7 +22,12 @@
 
 #IT_RANKING .swiper-slide {
   opacity: 0.6;
+
+  @media screen and (max-width: 450px) {
+    opacity: 1;
+  }
 }
+
 #IT_RANKING .swiper-slide.swiper-slide-active {
   opacity: 1;
 }

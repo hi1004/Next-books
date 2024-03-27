@@ -30,7 +30,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
           },
         }}
         navigation={!isMobile}
-        touchRatio={5}
+        touchRatio={4}
         modules={[Navigation]}
       >
         {books?.map((book) => (

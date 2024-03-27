@@ -32,7 +32,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
 
       <Swiper
         id="IT_RANKING"
-        slideToClickedSlide
+        slideToClickedSlide={!isMobile}
         slidesPerView={3.5}
         breakpoints={{
           1535: {
@@ -62,44 +62,58 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
         modules={[Navigation]}
       >
         {books?.map((book, index) => (
-          <SwiperSlide
-            key={book.rank}
-            className="flex justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Link
-              href=""
-              onClick={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                if (activeSlideIndex === index) {
-                  window.location.href = book.itemUrl
-                }
-              }}
-              className="cursor-pointer relative"
-            >
-              <Flex justify="center">
-                {/* <RankingNumber className="rank_number">
-                  {book.rank}
-                </RankingNumber> */}
-                <Image
-                  src={book.mediumImageUrls[0].replace('ex=', '128x128x')}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="w-auto  h-[128px]  object-cover shadow-xl"
-                  alt={book.itemCaption}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    setActiveSlideIndex(index)
-                  }}
-                />
-              </Flex>
+          <SwiperSlide key={book.rank} className="flex justify-center">
+            {isMobile ? (
+              <Link href={book.itemUrl} className="relative">
+                <Flex justify="center">
+                  <Image
+                    src={book.mediumImageUrls[0].replace('ex=', '128x128x')}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-auto  h-[128px]  object-cover shadow-xl"
+                    alt={book.itemCaption}
+                    onClick={(e) => {
+                      setActiveSlideIndex(index)
+                    }}
+                  />
+                </Flex>
 
-              <Text typography="t7" textAlign="center" display="block">
-                {truncateText(book.itemName, 13)}
-              </Text>
-            </Link>
+                <Text typography="t7" textAlign="center" display="block">
+                  {truncateText(book.itemName, 13)}
+                </Text>
+              </Link>
+            ) : (
+              <Link
+                href=""
+                onClick={(e) => {
+                  e.preventDefault()
+                  if (activeSlideIndex === index) {
+                    window.location.href = book.itemUrl
+                  }
+                }}
+                className="cursor-pointer relative"
+              >
+                <Flex justify="center">
+                  <Image
+                    src={book.mediumImageUrls[0].replace('ex=', '128x128x')}
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-auto  h-[128px]  object-cover shadow-xl"
+                    alt={book.itemCaption}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setActiveSlideIndex(index)
+                    }}
+                  />
+                </Flex>
+
+                <Text typography="t7" textAlign="center" display="block">
+                  {truncateText(book.itemName, 13)}
+                </Text>
+              </Link>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
