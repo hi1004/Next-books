@@ -23,7 +23,7 @@ async function getRankingData(URL: string) {
     }
     const data = await res.json()
 
-    const bisunissData = data.Items.slice(0, 10)
+    const bisunissData = data.Items.slice(0, 5)
     return bisunissData
   } catch (e) {
     console.log(e)

@@ -29,8 +29,8 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
         modules={[Navigation, Autoplay, Pagination, EffectFade]}
       >
         {books?.map((book) => (
-          <SwiperSlide key={book.rank} className="max-h-[800px] bg-gray-50">
-            <div className="grid grid-cols-1 xl:grid-cols-2">
+          <SwiperSlide key={book.rank} className=" bg-no-repeat bg-white">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
               <div className="hidden flex-col xl:flex justify-end mb-10">
                 <Flex align="center">
                   <Text typography="t7" color="gray600" bold className="mr-4">
@@ -55,15 +55,15 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
               <Flex
                 align="center"
                 justify="space-around"
-                className="xl:min-w-[600px] h-[800px] py-7 px-8 bg-primary/5 flex-col "
+                className="h-[400px] py-7 px-8 bg-primary/5 flex-col "
               >
                 <Image
-                  src={book.mediumImageUrls[0].replace('ex=', '')}
+                  src={book.mediumImageUrls[0].replace('ex=', '128x128x')}
                   width={0}
                   height={0}
                   sizes="100vw"
                   alt={book.itemCaption}
-                  className="w-auto h-[400px] md:h-[500px] xl:h-[700px] object-cover"
+                  className="w-auto h-[300px] object-cover"
                 />
                 <div className="flex-col xl:hidden justify-end">
                   <Flex align="center">

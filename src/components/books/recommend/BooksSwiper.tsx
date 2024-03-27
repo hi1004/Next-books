@@ -48,7 +48,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                   height={0}
                   priority
                   sizes="100vw"
-                  className="w-auto h-[145px] sm:h-[200px] hover:scale-110"
+                  className="w-auto h-[128px] hover:scale-110"
                   alt={book.itemCaption}
                 />
                 <div

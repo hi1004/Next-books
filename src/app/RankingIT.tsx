@@ -17,7 +17,7 @@ async function getRankingData(URL: string) {
       throw new Error('Failed to fetch data')
     }
     const data = await res.json()
-    const itRankingData = data.Items.slice(0, 20)
+    const itRankingData = data.Items.slice(0, 30)
     return itRankingData
   } catch (e) {
     console.log(e)

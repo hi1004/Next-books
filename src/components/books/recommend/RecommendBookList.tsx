@@ -20,7 +20,7 @@ const RecommendBookList = ({ category }: { category: CategoryType }) => {
 
   return (
     <section className="mt-40pxr">
-      <Text as="h2" typography="t2" bold className="px-24pxr">
+      <Text as="h3" typography="t3" bold className="px-24pxr">
         おすすめ
       </Text>
       <SwiperContainer>
