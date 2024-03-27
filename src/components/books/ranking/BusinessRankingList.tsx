@@ -2,6 +2,7 @@
 import Button from '@/components/shared/Button'
 import Flex from '@/components/shared/Flex'
 import Text from '@/components/shared/Text'
+import useMobile from '@/hooks/useMobile'
 import { RankingBookType } from '@/interface'
 import { truncateText } from '@/lib/truncatedText'
 import Image from 'next/image'
@@ -10,12 +11,13 @@ import 'swiper/css/pagination'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
+  const isMobile = useMobile()
   return (
     <section className="py-10 sm:px-24pxr">
       <Swiper
         effect="fade"
         id="ALL_RANKING"
-        navigation
+        navigation={!isMobile}
         slidesPerView={1}
         slidesPerGroupAuto
         autoplay={{
@@ -33,10 +35,10 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="hidden flex-col lg:w-[450px] ml-14 lg:flex justify-end mb-10">
                 <Flex align="center">
-                  <Text typography="t7" color="gray600" bold className="mr-4">
-                    ビズニスマナー
+                  <Text typography="t6" color="gray600" bold className="mr-4">
+                    ビジネスマナー
                   </Text>
-                  <Text typography="t3" display="inline" color="red">
+                  <Text typography="t6" display="inline" color="red">
                     {book.rank}位
                   </Text>
                 </Flex>
@@ -53,13 +55,12 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                   詳細を見る
                 </Button>
               </div>
-              <div className="sm:h-[400px] sm:flex-row flex pb-10 sm:pb-7 pt-10 sm:px-12 gap-4 sm:gap-10 justify-center sm:justify-normal lg:justify-center items-center bg-primary/5 ">
-                <div className="flex sm:hidden my-10pxr absolute top-0 left-6 items-center">
+              <div className="sm:h-[400px] sm:flex-row flex pb-10 sm:pb-7 sm:pt-7 pt-14 sm:px-12 gap-4 sm:gap-10 justify-center sm:justify-normal lg:justify-center items-center bg-primary/5 ">
+                <div className="flex sm:hidden my-10pxr absolute top-4 left-8 items-center">
                   <Text typography="t6" bold>
-                    ビズニスマナー
+                    ビジネスマナー
                   </Text>
-
-                  <Text typography="t4" display="inline" color="red">
+                  <Text typography="t6" display="inline" bold color="red">
                     {book.rank}位
                   </Text>
                 </div>
@@ -74,9 +75,9 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                 <div className="flex-col flex h-[145px] w-[180px] lg:hidden justify-end sm:h-[300px] sm:w-full relative">
                   <div className="hidden sm:flex items-center">
                     <Text typography="t6" color="gray600" bold className="mr-4">
-                      ビズニスマナー
+                      ビジネスマナー
                     </Text>
-                    <Text typography="t4" display="inline" color="red">
+                    <Text typography="t6" display="inline" color="red">
                       {book.rank}位
                     </Text>
                   </div>
@@ -104,7 +105,7 @@ const AllRankingList = ({ books }: { books: RankingBookType[] }) => {
                   <Button
                     size="small"
                     color="error"
-                    className="sm:max-w-[140px] max-w-[100px] sm:absolute bottom-0 right-0"
+                    className="sm:max-w-[140px] max-w-[100px] ml-auto mr-0 sm:absolute bottom-0 right-0"
                   >
                     詳細を見る
                   </Button>

@@ -1,14 +1,10 @@
 import AllRankingList from '@/components/books/ranking/BusinessRankingList'
 import { BISUNISS_RANKING_URL } from '@/constants/api'
-import { Suspense } from 'react'
 
 const RankingAll = async () => {
   const data = await getRankingData(BISUNISS_RANKING_URL)
-  return (
-    <Suspense fallback={<div>loading...</div>}>
-      <AllRankingList books={data} />
-    </Suspense>
-  )
+
+  return <AllRankingList books={data} />
 }
 
 export default RankingAll
@@ -21,9 +17,11 @@ async function getRankingData(URL: string) {
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
+
     const data = await res.json()
 
     const bisunissData = data.Items.slice(0, 5)
+
     return bisunissData
   } catch (e) {
     console.log(e)

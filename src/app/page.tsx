@@ -1,14 +1,16 @@
 import RankingAll from '@/app/RankingAll'
 import RankingIT from '@/app/RankingIT'
 import RecommendBookList from '@/components/books/recommend/RecommendBookList'
+import { Suspense } from 'react'
 export default async function HomePage() {
   const { category } = await getCategoryData()
 
   return (
     <>
-      <RankingAll />
+      <Suspense fallback={<div>loading...</div>}>
+        <RankingAll />
+      </Suspense>
       <RankingIT />
-
       <RecommendBookList category={category} />
     </>
   )

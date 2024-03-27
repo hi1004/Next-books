@@ -4,30 +4,21 @@ import { AiOutlineRight } from 'react-icons/ai'
 import Flex from '@/components/shared/Flex'
 import Spacing from '@/components/shared/Spacing'
 import Text from '@/components/shared/Text'
+import useMobile from '@/hooks/useMobile'
 import { RankingBookType } from '@/interface'
+import { truncateText } from '@/lib/truncatedText'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import tw, { styled } from 'twin.macro'
 const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0)
-  const [isMobile, setIsMobile] = useState<boolean>(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 450)
-    }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  const isMobile = useMobile()
 
   return (
-    <section className="w-full pt-10pxr pb-30pxr bg-primary/5 ">
+    <section className="w-full pt-10pxr px-2 pb-30pxr bg-primary/5 ">
       <Flex align="center" className="px-24pxr py-20pxr">
         <Text typography="t3" as="h3" bold className="hidden sm:block">
           おすすめのIT資格
@@ -42,7 +33,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
       <Swiper
         id="IT_RANKING"
         slideToClickedSlide
-        slidesPerView={3}
+        slidesPerView={3.5}
         breakpoints={{
           1535: {
             slidesPerView: 8,
@@ -62,8 +53,10 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
           },
           450: {
             loop: false,
+            centeredSlides: false,
           },
         }}
+        touchRatio={1}
         navigation={!isMobile}
         loopAdditionalSlides={10}
         modules={[Navigation]}
@@ -102,6 +95,10 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
                   }}
                 />
               </Flex>
+
+              <Text typography="t7" textAlign="center" display="block">
+                {truncateText(book.itemName, 13)}
+              </Text>
             </Link>
           </SwiperSlide>
         ))}

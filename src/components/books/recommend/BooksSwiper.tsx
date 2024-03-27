@@ -1,6 +1,7 @@
 import Button from '@/components/shared/Button'
 import Flex from '@/components/shared/Flex'
 import Text from '@/components/shared/Text'
+import useMobile from '@/hooks/useMobile'
 import { BookType } from '@/interface'
 import { truncateText } from '@/lib/truncatedText'
 import Image from 'next/image'
@@ -11,11 +12,12 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 const BooksSwiper = ({ books }: { books: BookType[] }) => {
+  const isMobile = useMobile()
   return (
     <>
       <Swiper
         spaceBetween={20}
-        slidesPerView={2}
+        slidesPerView={1.5}
         breakpoints={{
           640: {
             slidesPerView: 2,
@@ -27,7 +29,8 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
             slidesPerView: 4,
           },
         }}
-        navigation
+        navigation={!isMobile}
+        touchRatio={1}
         modules={[Navigation]}
       >
         {books?.map((book) => (
@@ -80,7 +83,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                 </Text>
                 <div>{book.reviewAverage}</div>
 
-                <Text typography="t1" color="red">
+                <Text typography="t3" color="red">
                   {book.itemPrice.toLocaleString()}円
                   <small className="text-sm">(税込)</small>
                 </Text>

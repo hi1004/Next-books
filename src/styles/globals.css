@@ -34,8 +34,8 @@
   top: 30% !important;
   height: 50% !important;
 }
-.swiper-wrapper {
-  transition-timing-function: linear !important;
+#IT_RANKING .swiper-wrapper {
+  transition-timing-function: linear;
 }
 .swiper-slide:hover .hover\:underline {
   text-decoration: underline;
