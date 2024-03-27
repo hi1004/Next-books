@@ -56,7 +56,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
             centeredSlides: false,
           },
         }}
-        touchRatio={1}
+        touchRatio={30}
         navigation={!isMobile}
         loopAdditionalSlides={10}
         modules={[Navigation]}
@@ -83,7 +83,7 @@ const ITrankingList = ({ books }: { books: RankingBookType[] }) => {
                   {book.rank}
                 </RankingNumber> */}
                 <Image
-                  src={book.mediumImageUrls[0]}
+                  src={book.mediumImageUrls[0].replace('ex=', '128x128x')}
                   width={0}
                   height={0}
                   sizes="100vw"
