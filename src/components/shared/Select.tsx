@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-'use client'
 import Flex from '@/components/shared/Flex'
 import Text from '@/components/shared/Text'
 import { colors } from '@/styles/colorPalette'
@@ -29,31 +28,33 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
   ref,
 ) {
   return (
-    <Flex direction="column">
-      {label && (
-        <Text
-          typography="t7"
-          color="black"
-          display="inline-block"
-          css={tw`mb-6pxr`}
-        >
-          {label}
-        </Text>
-      )}
-
-      <BaseSelect ref={ref} required={true} value={value} {...props}>
-        {placeholder && (
-          <option hidden value="">
-            {placeholder}
-          </option>
-        )}
-        {options.map(({ label, value }) => (
-          <option key={label} value={value}>
+    <div>
+      <Flex direction="column">
+        {label && (
+          <Text
+            typography="t7"
+            color="black"
+            display="inline-block"
+            css={tw`mb-6pxr`}
+          >
             {label}
-          </option>
-        ))}
-      </BaseSelect>
-    </Flex>
+          </Text>
+        )}
+
+        <BaseSelect ref={ref} required={true} value={value} {...props}>
+          {placeholder && (
+            <option hidden value="">
+              {placeholder}
+            </option>
+          )}
+          {options.map(({ label, value }) => (
+            <option key={label} value={value}>
+              {label}
+            </option>
+          ))}
+        </BaseSelect>
+      </Flex>
+    </div>
   )
 })
 

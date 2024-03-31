@@ -20,14 +20,6 @@
   background-color: var(--red50) !important;
 }
 
-#IT_RANKING .swiper-slide {
-  opacity: 0.6;
-
-  @media screen and (max-width: 450px) {
-    opacity: 1;
-  }
-}
-
 #IT_RANKING .swiper-slide.swiper-slide-active {
   opacity: 1;
 }
@@ -78,6 +70,9 @@
 }
 body {
   font-family: -apple-system, NotoSansJP, sans-serif;
+}
+.slide-link:hover .ranking_title {
+  text-decoration: underline;
 }
 
 @font-face {

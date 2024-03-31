@@ -1,30 +1,14 @@
-import RankingAll from '@/app/RankingAll'
-import RankingIT from '@/app/RankingIT'
-import RecommendBookList from '@/components/books/recommend/RecommendBookList'
-import { Suspense } from 'react'
-export default async function HomePage() {
-  const { category } = await getCategoryData()
-
+import GetMainGenreBooks from '@/components/books/genre/business/GetMainGenreBooks'
+import GetGenreRecommendBooks from '@/components/books/genre/recommend/GetGenreRecommendBooks'
+import GetRankingBooks from '@/components/books/ranking/GetRankingBooks'
+import GetRecommendBooks from '@/components/books/recommend/GetRecommendBooks'
+export default function HomePage() {
   return (
     <>
-      <Suspense fallback={<div>loading...</div>}>
-        <RankingAll />
-      </Suspense>
-      <RankingIT />
-      <RecommendBookList category={category} />
+      <GetMainGenreBooks />
+      <GetRankingBooks />
+      <GetGenreRecommendBooks />
+      <GetRecommendBooks />
     </>
   )
-}
-
-async function getCategoryData() {
-  try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/books`)
-
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
-    }
-    return res.json()
-  } catch (e) {
-    console.log(e)
-  }
 }

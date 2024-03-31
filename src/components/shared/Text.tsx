@@ -13,7 +13,6 @@ interface TextProps {
   fontWeight?: CSSProperties['fontWeight']
   bold?: boolean
 }
-
 const Text = styled.span(
   ({
     typography = 't5',

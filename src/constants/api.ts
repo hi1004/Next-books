@@ -1,2 +1,4 @@
-export const BISUNISS_RANKING_URL = `https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601?applicationId=${process.env.RAKUTEN_CLIENT_ID}&genreId=562179&formatVersion=2`
-export const IT_RANKING_URL = `https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601?applicationId=${process.env.RAKUTEN_CLIENT_ID}&genreId=101287&formatVersion=2`
+export const BISUNISS_RANKING_URL = `https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&booksGenreId=001006009&sort=sales&formatVersion=2&availability=0&applicationId=${process.env.RAKUTEN_CLIENT_ID}`
+export const BOOKS_RANKING_URL = `https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&booksGenreId=001006003&formatVersion=2&size=0&sort=sales&applicationId=${process.env.RAKUTEN_CLIENT_ID}`
+export const IT_RANKING_URL = `https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&booksGenreId=001016011&sort=sales&formatVersion=2&availability=0&applicationId=${process.env.RAKUTEN_CLIENT_ID}`
+export const MARKETING_RANKING_URL = `https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&booksGenreId=001006004004&sort=sales&formatVersion=2&availability=0&applicationId=${process.env.RAKUTEN_CLIENT_ID}`
