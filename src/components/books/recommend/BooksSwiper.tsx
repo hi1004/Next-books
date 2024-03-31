@@ -53,7 +53,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
                   height={0}
                   priority
                   sizes="100vw"
-                  className="w-auto h-[200px] hover:scale-110"
+                  className="w-auto sm:h-[200px] h-[145px] hover:scale-110"
                   alt={book.itemCaption}
                 />
               </Flex>
