@@ -18,4 +18,4 @@ export const NextLayout = ({ children }: { children: React.ReactNode }) => {
     </>
   )
 }
-const Container = tw.section`container h-full mx-auto mt-60pxr max-w-5xl bg-gray-50`
+const Container = tw.div`container h-full mx-auto mt-60pxr max-w-5xl bg-slate-50`

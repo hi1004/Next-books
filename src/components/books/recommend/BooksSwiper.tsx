@@ -43,7 +43,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
             >
               <Flex
                 direction="column"
-                className="w-full shadow-md py-10 relative rounded-2xl overflow-hidden bg-gradient-to-bl from-primary/20 to-primary/5  "
+                className="w-full shadow-md py-10 relative rounded-2xl overflow-hidden bg-gradient-to-bl from-primary/20 to-primary/5"
                 justify="center"
                 align="center"
               >

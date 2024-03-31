@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body suppressHydrationWarning className="bg-slate-100">
+      <body suppressHydrationWarning className="bg-slate-50">
         <NextProvider>
           <NextLayout>{children}</NextLayout>
         </NextProvider>

@@ -86,7 +86,7 @@ const GenreRecommendList = ({
                       height={0}
                       sizes="100vw"
                       loading="lazy"
-                      className="w-auto  h-[120px]  object-cover shadow-xl"
+                      className="w-auto  h-[120px] object-cover shadow-xl"
                       alt={book.itemCaption}
                     />
                   </Flex>

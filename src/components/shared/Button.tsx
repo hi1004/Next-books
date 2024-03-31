@@ -20,6 +20,7 @@ interface ButtonProps {
   full?: boolean
   disabled?: boolean
   circle?: boolean
+  className?: string
 }
 
 const BaseButton = styled.button(
@@ -30,6 +31,7 @@ const BaseButton = styled.button(
     full,
     disabled,
     circle,
+    className,
   }: ButtonProps) => [
     tw`font-bold cursor-pointer flex items-center justify-center outline-none rounded-[6px] hocus:opacity-80 transition duration-75`,
     buttonSizeMap[size],
@@ -71,7 +73,4 @@ export default Button
 const buttonGroupStyles = css`
   flex-wrap: wrap;
   gap: 10px;
-  & button {
-    flex: 1;
-  }
 `
