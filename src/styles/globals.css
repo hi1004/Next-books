@@ -74,6 +74,9 @@ body {
 .slide-link:hover .ranking_title {
   text-decoration: underline;
 }
+.recommend-slide {
+  height: 343px !important;
+}
 
 @font-face {
   font-family: 'NotoSansJP';

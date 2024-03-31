@@ -62,13 +62,16 @@ const MainGenreBookList = ({ books }: { books: BookType[] }) => {
                     </Text>
                   </div>
                   <Image
-                    src={book.largeImageUrl}
+                    src={book?.largeImageUrl.replace(
+                      'ex=200x200',
+                      'ex=300x300',
+                    )}
                     width={0}
                     height={0}
                     priority
                     sizes="100vw"
                     alt={book.itemCaption}
-                    className="w-auto h-[145px] sm:h-[240px] object-cover"
+                    className="w-auto h-[145px] sm:h-[300px] object-cover"
                   />
                   <div className="flex-col flex h-[145px] w-[180px] lg:hidden justify-end sm:h-[300px] sm:w-full relative">
                     <div className="hidden sm:flex items-center">

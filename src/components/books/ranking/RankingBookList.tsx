@@ -59,16 +59,19 @@ const RankingBookList = ({ books }: { books: BookType[] }) => {
                     href={`/search/${book.isbn}`}
                     className="cursor-pointer slide-link inline-block relative"
                   >
-                    <span className="md:absolute font-black relative block text-30pxr text-center md:text-[7vw] md:left-0 bottom-0 text-primary/80 ">
+                    <span className="md:absolute font-black relative block text-30pxr text-center md:text-[7vw] md:left-0 bottom-0 text-primary ">
                       {rank + 1}
                     </span>
                     <Image
-                      src={book?.mediumImageUrl.replace('ex=', '128x128')}
+                      src={book?.largeImageUrl.replace(
+                        'ex=200x200',
+                        'ex=300x300',
+                      )}
                       width={0}
                       height={0}
                       sizes="100vw"
                       loading="lazy"
-                      className="w-auto md:h-[200px] mx-auto xl:h-[300px] h-[128px]  object-cover shadow-xl"
+                      className="w-auto md:h-[200px] mx-auto xl:h-[300px] h-[120px]  object-cover shadow-xl"
                       alt={book.itemCaption}
                     />
                     <p className="ranking_title text-center w-full hidden xl:inline-block">

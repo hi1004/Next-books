@@ -1,4 +1,4 @@
-import Detail from '@/components/books/Detail'
+import DetailBooks from '@/components/books/DetailBooks'
 import { notFound } from 'next/navigation'
 
 const BookDetailPage = async ({ params }: { params: { isbn: string } }) => {
@@ -10,7 +10,7 @@ const BookDetailPage = async ({ params }: { params: { isbn: string } }) => {
     `https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?applicationId=${process.env.RAKUTEN_CLIENT_ID}&keyword=${BOOK?.title}&formatVersion=2`,
   )
 
-  return <Detail book={BOOK} detailBook={DETAIL_BOOK} />
+  return <DetailBooks book={BOOK} detailBook={DETAIL_BOOK} />
 }
 
 export default BookDetailPage

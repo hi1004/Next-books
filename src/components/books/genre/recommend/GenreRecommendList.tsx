@@ -81,12 +81,12 @@ const GenreRecommendList = ({
                 >
                   <Flex justify="center">
                     <Image
-                      src={book?.mediumImageUrl.replace('ex=', '128x128')}
+                      src={book?.largeImageUrl}
                       width={0}
                       height={0}
                       sizes="100vw"
                       loading="lazy"
-                      className="w-auto  h-[128px]  object-cover shadow-xl"
+                      className="w-auto  h-[120px]  object-cover shadow-xl"
                       alt={book.itemCaption}
                     />
                   </Flex>
