@@ -71,7 +71,7 @@ const DetailBooks = ({
                   </Button>
                   <Flex
                     align="center"
-                    className="absolute  justify-end px-3 lg:px-0 right-0 bottom-0"
+                    className="absolute justify-end px-3 lg:px-0 right-0 -bottom-[3px]"
                     css={tw`flex lg:hidden`}
                   >
                     <span className="text-lg text-primary font-medium">

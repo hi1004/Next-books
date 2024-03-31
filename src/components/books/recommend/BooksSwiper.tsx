@@ -38,7 +38,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
           <>
             <Link
               href={{
-                pathname: `/books/${book.id}`,
+                pathname: `/search/${book.isbn}`,
               }}
             >
               <Flex

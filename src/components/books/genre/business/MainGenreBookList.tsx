@@ -7,6 +7,7 @@ import useMobile from '@/hooks/useMobile'
 import { BookType } from '@/interface'
 import { truncateText } from '@/lib/truncatedText'
 import Image from 'next/image'
+import Link from 'next/link'
 import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
 import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules'
@@ -46,14 +47,18 @@ const MainGenreBookList = ({ books }: { books: BookType[] }) => {
                     {book.title}
                   </Text>
                   <div className="mt-1 my-6">{book.reviewAverage}</div>
-
-                  <Button
-                    size="medium"
-                    color="error"
-                    className="sm:max-w-[140px]"
+                  <Link
+                    href={`/search/${book.isbn}`}
+                    className="sm:max-w-[105px]"
                   >
-                    詳細を見る
-                  </Button>
+                    <Button
+                      size="medium"
+                      color="error"
+                      className="sm:max-w-[140px]"
+                    >
+                      詳細を見る
+                    </Button>
+                  </Link>
                 </div>
                 <div className="sm:h-[400px] sm:flex-row flex pb-10 sm:pb-7 sm:pt-7 pt-14 sm:px-12 gap-4 sm:gap-10 justify-center sm:justify-normal lg:justify-center items-center bg-primary/5 ">
                   <div className="flex sm:hidden my-10pxr absolute top-4 left-8 items-center">
@@ -105,13 +110,15 @@ const MainGenreBookList = ({ books }: { books: BookType[] }) => {
                         {book.reviewAverage}
                       </div>
                     </div>
-                    <Button
-                      size="small"
-                      color="error"
-                      className="sm:max-w-[140px] max-w-[100px] ml-auto mr-0 sm:absolute bottom-0 right-0"
-                    >
-                      詳細を見る
-                    </Button>
+                    <Link href={`/search/${book.isbn}`} className="max-w-full">
+                      <Button
+                        size="small"
+                        color="error"
+                        className="sm:max-w-[140px] max-w-[100px] ml-auto mr-0 sm:absolute bottom-0 right-0"
+                      >
+                        詳細を見る
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
