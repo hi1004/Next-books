@@ -77,6 +77,9 @@ body {
 .recommend-slide {
   height: 343px !important;
 }
+.ranking {
+  -webkit-text-stroke: 2px #fff;
+}
 
 @font-face {
   font-family: 'NotoSansJP';

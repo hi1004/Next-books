@@ -10,7 +10,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 const BooksSwiper = ({ books }: { books: BookType[] }) => {
   const isMobile = useMobile()
-
   return (
     <Swiper
       spaceBetween={20}
@@ -38,7 +37,9 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
           <>
             <Link
               href={{
-                pathname: `/search/${book.isbn}`,
+                pathname: book.isbn
+                  ? `/search/${book.isbn}`
+                  : `/books/${book.category}/${book.id}`,
               }}
             >
               <Flex

@@ -16,7 +16,7 @@ const MainGenreBookList = ({ books }: { books: BookType[] }) => {
   const isMobile = useMobile()
   const domLoaded = useDomLoaded()
   return (
-    <section className="py-10 sm:px-24pxr">
+    <section className="py-10">
       {domLoaded ? (
         <Swiper
           effect="fade"

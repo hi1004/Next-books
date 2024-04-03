@@ -59,7 +59,7 @@ const RankingBookList = ({ books }: { books: BookType[] }) => {
                     href={`/search/${book.isbn}`}
                     className="cursor-pointer slide-link inline-block relative"
                   >
-                    <span className="md:absolute font-black relative block text-30pxr text-center md:text-[7vw] md:left-0 bottom-0 text-primary ">
+                    <span className="md:absolute ranking font-black relative block text-30pxr text-center md:text-[7vw] md:left-0 bottom-0 text-primary ">
                       {rank + 1}
                     </span>
                     <Image
@@ -74,10 +74,10 @@ const RankingBookList = ({ books }: { books: BookType[] }) => {
                       className="w-auto md:h-[200px] mx-auto xl:h-[300px] h-[120px]  object-cover shadow-xl"
                       alt={book.itemCaption}
                     />
-                    <p className="ranking_title text-center w-full hidden xl:inline-block">
+                    <p className="ranking_title text-center w-full mt-4 hidden xl:inline-block">
                       {truncateText(book.title, 20)}
                     </p>
-                    <p className="ranking_title text-center w-full inline-block text-sm xl:hidden">
+                    <p className="ranking_title text-center w-full  mt-4 inline-block text-sm xl:hidden">
                       {truncateText(book.title, 13)}
                     </p>
                   </Link>
