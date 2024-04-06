@@ -1,4 +1,6 @@
+import SearchFilter from '@/app/search/SearchFilter'
 import { BookType } from '@/interface'
+import { Suspense } from 'react'
 
 export default async function SearchPage({
   searchParams,
@@ -7,7 +9,14 @@ export default async function SearchPage({
 }) {
   const books: BookType[] = await fetchFilteredBooks(searchParams.query)
 
-  return <div>{books?.map((book) => <p key={book.isbn}>{book.title}</p>)}</div>
+  return (
+    <>
+      <Suspense fallback={<div>searching...</div>}>
+        <SearchFilter />
+      </Suspense>
+      <div>{books?.map((book) => <p key={book.isbn}>{book.title}</p>)}</div>
+    </>
+  )
 }
 
 async function fetchFilteredBooks(query: string) {

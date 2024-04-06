@@ -1,9 +1,6 @@
-import SearchFilter from '@/app/search/SearchFilter'
-import MenuList from '@/components/MenuList'
 import Flex from '@/components/shared/Flex'
 import Text from '@/components/shared/Text'
 import Link from 'next/link'
-import { Suspense } from 'react'
 
 const Header = () => {
   return (
@@ -18,10 +15,7 @@ const Header = () => {
               BOOK&apos;s PROJECT
             </Text>
           </Link>
-          <MenuList />
-          <Suspense fallback={<div>searching...</div>}>
-            <SearchFilter />
-          </Suspense>
+          {/* <MenuList /> */}
         </Flex>
       </nav>
     </header>

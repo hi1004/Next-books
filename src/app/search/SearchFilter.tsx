@@ -2,7 +2,7 @@
 
 import Button from '@/components/shared/Button'
 import Flex from '@/components/shared/Flex'
-import Input from '@/components/shared/Input'
+import TextField from '@/components/shared/TextField'
 import useDebouncedCallback from '@/hooks/useDebouncedCallback'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { FormEvent, useState } from 'react'
@@ -22,7 +22,6 @@ const SearchFilter = () => {
       setSearchValue(term)
     }
   }, 300)
-  console.log(searchValue)
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const params = new URLSearchParams(searchParams)
@@ -30,16 +29,24 @@ const SearchFilter = () => {
     if (searchValue) replace(`/search?${params.toString()}`)
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="flex flex-col">
       <Flex>
-        <Input
+        <TextField
+          label="Search"
           type="search"
           onChange={(e) => {
             handleSearch(e.target.value)
           }}
           defaultValue={searchParams.get('query')?.toString()}
         />
-        <Button color="success" type="submit">
+        {/* <Input
+          type="search"
+          onChange={(e) => {
+            handleSearch(e.target.value)
+          }}
+          defaultValue={searchParams.get('query')?.toString()}
+        /> */}
+        <Button color="error" type="submit">
           submit
         </Button>
       </Flex>
