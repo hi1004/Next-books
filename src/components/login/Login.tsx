@@ -1,15 +1,15 @@
 'use client'
 /** @jsxImportSource @emotion/react */
-import tw from 'twin.macro'
 import Button from '../shared/Button'
 import Flex from '../shared/Flex'
 import Input from '../shared/Input'
 import Spacing from '../shared/Spacing'
 import Text from '../shared/Text'
+import TextField from '../shared/TextField'
 
 const Login = () => {
   return (
-    <Flex align="center" justify="center" direction="column">
+    <section className="flex justify-center items-center">
       <Flex
         className="max-w-[280px] md:max-w-sm w-full"
         align="center"
@@ -18,19 +18,16 @@ const Login = () => {
       >
         <Spacing size={100} />
         <Text color="red" typography="t1" bold>
-          BOOK PROJECT
+          BOOK&apos;s PROJECT
         </Text>
         <Spacing size={60} />
         <Text typography="t3" bold>
           ログイン
         </Text>
         <Spacing size={30} />
-        <Input
-          placeholder="メールアドレスまたは携帯電話番号"
-          className="text-center"
-        />
+        <TextField placeholder="メールアドレスまたは携帯電話番号" />
         <Spacing size={20} />
-        <Input placeholder="パスワード" className="text-center" />
+        <TextField placeholder="パスワード" />
         <Spacing size={40} />
         <Button color="error" className="w-full">
           ログイン
@@ -45,15 +42,11 @@ const Login = () => {
         <Text color="red" typography="t6">
           初めてのご利用の方はこちら
         </Text>
-        <Button
-          color="error"
-          className="w-full my-3"
-          css={tw`bg-white border-primary text-primary font-bold`}
-        >
+        <Button color="error" className="w-full my-3" outline>
           新規会員登録
         </Button>
       </Flex>
-    </Flex>
+    </section>
   )
 }
 
