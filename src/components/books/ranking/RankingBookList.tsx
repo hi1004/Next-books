@@ -56,7 +56,7 @@ const RankingBookList = ({ books }: { books: BookType[] }) => {
               <SwiperSlide key={book.isbn}>
                 <Flex justify="center">
                   <Link
-                    href={`/search/${book.isbn}`}
+                    href={`/detail/${book.isbn}`}
                     className="cursor-pointer slide-link inline-block relative"
                   >
                     <span className="md:absolute ranking font-black relative block text-30pxr text-center md:text-[7vw] md:left-0 bottom-0 text-primary ">

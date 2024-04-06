@@ -1,3 +1,4 @@
+import SearchFilter from '@/app/search/SearchFilter'
 import MenuList from '@/components/MenuList'
 import Flex from '@/components/shared/Flex'
 import Text from '@/components/shared/Text'
@@ -17,6 +18,7 @@ const Header = () => {
             </Text>
           </Link>
           <MenuList />
+          <SearchFilter />
         </Flex>
       </nav>
     </header>

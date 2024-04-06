@@ -38,7 +38,7 @@ const BooksSwiper = ({ books }: { books: BookType[] }) => {
             <Link
               href={{
                 pathname: book.isbn
-                  ? `/search/${book.isbn}`
+                  ? `/detail/${book.isbn}`
                   : `/books/${book.category}/${book.id}`,
               }}
             >

@@ -34,7 +34,7 @@ const RecommendBookList = ({ category }: { category: CategoryType }) => {
           {CATEGORY_ARR.map((categoryName) => (
             <Fragment key={categoryName}>
               <Text
-                typography="t5"
+                typography="t6"
                 className={`hidden 2xl:inline-block md:mr-4 lg:mr-10 last-of-type:mr-0 relative top-10 cursor-pointer hover:border-b-2 hover:text-primary border-b-primary  ${selectedCategory === categoryName && 'border-b-2'}`}
                 color={selectedCategory === categoryName ? 'red' : 'gray700'}
                 onClick={() => setSelectedCategory(categoryName)}

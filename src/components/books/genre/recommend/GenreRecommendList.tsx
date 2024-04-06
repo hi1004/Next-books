@@ -76,7 +76,7 @@ const GenreRecommendList = ({
             {books?.map((book) => (
               <SwiperSlide key={book.isbn} className="flex justify-center">
                 <Link
-                  href={`/search/${book.isbn}`}
+                  href={`/detail/${book.isbn}`}
                   className="cursor-pointer relative hover:underline"
                 >
                   <Flex justify="center">

@@ -48,7 +48,7 @@ const MainGenreBookList = ({ books }: { books: BookType[] }) => {
                   </Text>
                   <div className="mt-1 my-6">{book.reviewAverage}</div>
                   <Link
-                    href={`/search/${book.isbn}`}
+                    href={`/detail/${book.isbn}`}
                     className="sm:max-w-[105px]"
                   >
                     <Button
