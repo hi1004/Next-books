@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const res = await fetch(
       `https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=${query}&applicationId=${process.env.RAKUTEN_CLIENT_ID}&formatVersion=2`,
       {
-        next: { revalidate: 60 },
+        cache: 'no-store',
       },
     )
     const books = await res.json().then((books) => books.Items)

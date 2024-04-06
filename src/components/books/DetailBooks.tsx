@@ -54,7 +54,7 @@ const DetailBooks = ({
                     </Text>
                   )}
 
-                  <Text typography="t6" color="gray700">
+                  <Text typography="t6" color="gray700" css={tw`text-red-400`}>
                     {book.publisherName}
                   </Text>
                   <Text typography="t6" color="gray700">
